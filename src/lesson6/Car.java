@@ -7,7 +7,7 @@ public class Car {
     String ownerName;
     double weight;
     int horsePower;
-
+//комит
     public Car() {
     }
 
