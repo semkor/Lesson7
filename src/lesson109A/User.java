@@ -1,4 +1,4 @@
-package lesson109;
+package lesson109A;
 
 public class User {
     private long id;
@@ -11,19 +11,15 @@ public class User {
         this.sessionId = sessionId;
     }
 
-    public User(String name) {
-        this.name = name;
-    }
-
-    public User(long id) {
-        this.id = id;
+    public long getId() {
+        return id;
     }
 
     public String getName() {
         return name;
     }
 
-    public long getId() {
-        return id;
+    public String getSessionId() {
+        return sessionId;
     }
 }
