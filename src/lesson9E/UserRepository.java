@@ -1,4 +1,5 @@
-package lesson109A;
+package lesson9E;
+
 
 public class UserRepository {
     private User[] users;
@@ -56,19 +57,6 @@ public class UserRepository {
         return result;
     }
 
-    public String getUserById(long id) {
-        int count = 0;
-        String result = null;
-        for (int i = 0; i < users.length; i++) {
-            if (id == longs[i]) {
-                result = strings[count];
-                break;
-            }
-            count++;
-        }
-        return result;
-    }
-
     public String getUserBySessionId(String sessionId) {
         for (int i = 0; i < users.length; i++) {
             arraySessionId[i] = users[i].getSessionId();
@@ -83,5 +71,45 @@ public class UserRepository {
             count++;
         }
         return result;
+    }
+
+    public String findById(long id) {
+        int count = 0;
+        String result = null;
+        for (int i = 0; i < users.length; i++) {
+            if (id == longs[i]) {
+                result = strings[count];
+                break;
+            }
+            count++;
+        }
+        return result;
+    }
+
+    public User save(User user) {
+        if (findById(user.getId()) == null)
+            return null;
+
+        for (int i = 0; i < users.length; i++) {
+            if (strings[i] == null) {
+                strings[i] = user.getName();
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public User updater(User user){
+        if (findById(user.getId()) == null)
+            return null;
+
+        String nowName=findById(user.getId());
+        nowName=user.getName();
+            return user;
+    }
+
+    public void delete(long id){
+        String delete=findById(id);
+        delete=null;
     }
 }

@@ -1,6 +1,6 @@
 package lesson11A;
 
-import java.util.*;
+import java.util.Date;
 
 //описывает комнаты, которые ищет система
 public class Room {
@@ -52,8 +52,16 @@ public class Room {
         this.dateAvailableFrom = dateAvailableFrom;
     }
 
-    public String toString(){
-        String txt="login: "+id+" price: "+price+" persons: "+persons+" dateAvailableFro: "+dateAvailableFrom+" hotelName: "+hotelName+" cityName: "+ cityName;
-        return txt;
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "id=" + id +
+                ", price=" + price +
+                ", persons=" + persons +
+                ", dateAvailableFrom=" + dateAvailableFrom +
+                ", hotelName='" + hotelName + '\'' +
+                ", cityName='" + cityName + '\'' +
+                '}';
     }
 }

@@ -11,27 +11,31 @@ public class FurnitureOrder extends Order {
     }
 
     @Override
-    void validateOrder() {
-        if (getShipFromCity().equalsIgnoreCase("Киев") || getShipFromCity().equalsIgnoreCase("Львов"))
-            System.out.println("Из города " + getShipFromCity() + " осуществляются заказы");
-        else {
-            System.out.println("Из города " + getShipFromCity() + " не осуществляются заказы");
-            System.out.println("Выберите из двух городов: Киев, Львов");
+    public void validateOrder() {
+        if (getShipFromCity() == null || (!getShipFromCity().equalsIgnoreCase("Киев")
+                && !getShipFromCity().equalsIgnoreCase("Львов"))) {
+            System.err.println("Из города " + getShipFromCity() + " не осуществляются заказы.\nВыберите из городов: Киев, Львов");
+            return;
         }
     }
 
-
     @Override
     public void calculatePrice() {
-        if(getTotalPrice()<500)
-            System.out.println("Минимальная цена заказа 500 грн");
+        price=getBasePrice();
 
-        if (getCustomerOwned().getName().equalsIgnoreCase("Тест"))
-            System.out.println("Имя не может быть Тест");
+        if (price < 500) {
+            System.err.println("Минимальная цена заказа - 500 грн");
+            return;
+        }
 
-        if(getTotalPrice()<5000)
-            price = getBasePrice()+getBasePrice()*0.05;
+        if (getCustomerOwned().getName().equalsIgnoreCase("Тест")){
+            System.err.println("Имя не может быть \"Тест\"");
+            return;
+        }
+
+        if(getBasePrice()<5000)
+            totalPrice=getBasePrice()+getBasePrice() * 0.05;
         else
-            price = getBasePrice()+getBasePrice()*0.02;
+            totalPrice=getBasePrice()+getBasePrice() * 0.02;
     }
 }

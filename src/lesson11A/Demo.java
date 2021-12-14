@@ -34,6 +34,7 @@ public class Demo {
         Room room51 = new Room(5l, 80, 1, new Date(1650000000200l), "Gannus", "Moscow");
         Room[] requestRooms2 = new Room[]{room31, room41, room51};
         API api2 = new TripAdvisorAPI(requestRooms2);
+
         System.out.println(Arrays.toString(controller.check(api1, api2)));
     // 3+
         System.out.println(controller.cheapestRoom());

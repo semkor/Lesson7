@@ -43,14 +43,14 @@ public class Demo2 {
 
 //запросы
      // 1+
-       System.out.println(Arrays.toString(controller.requestRooms(50, 3, "Kiev", "Tanus")));
-       System.out.println(Arrays.toString(controller.requestRooms(100000, 50, "TFnus", "Lyvov")));
+//       System.out.println(Arrays.toString(controller.requestRooms(50, 3, "Kiev", "Tanus")));
+       System.out.println(Arrays.toString(controller.requestRooms(100000, 50, "Lyvov", "TFnus")));
     // 2+
-        API api1 = new BookingComAPI(demo.getRequestRooms());
-        API api2 = new TripAdvisorAPI(demo.getRequestRooms2());
-        System.out.println(Arrays.toString(controller.check(api1, api2)));
-    // 3+
-        System.out.println(controller.cheapestRoom());
+//        API api1 = new BookingComAPI(demo.getRequestRooms());
+//        API api2 = new TripAdvisorAPI(demo.getRequestRooms2());
+//        System.out.println(Arrays.toString(controller.check(api1, api2)));
+//    // 3+
+//        System.out.println(controller.cheapestRoom());
 
 
 

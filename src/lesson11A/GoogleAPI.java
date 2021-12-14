@@ -1,5 +1,6 @@
 package lesson11A;
 
+
 public class GoogleAPI implements API {
     private Room[] rooms;
 
@@ -7,7 +8,7 @@ public class GoogleAPI implements API {
         this.rooms = rooms;
     }
 
-    //нуно проработать (NullException - если нет таких данных в базе
+
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
         int count = 0;
@@ -16,6 +17,11 @@ public class GoogleAPI implements API {
             if (rooms[i].getPrice() == price && rooms[i].getPersons() == persons && rooms[i].getCityName().equalsIgnoreCase(city) && rooms[i].getHotelName().equalsIgnoreCase(hotel)) {
                 count++;
             }
+        }
+
+        if(count==0){
+            System.err.println("Cовпадений по заданному параметру  не найдено");
+            return null;
         }
 
         Room[] methodRoom3 = new Room[count];
@@ -35,10 +41,10 @@ public class GoogleAPI implements API {
         int count = 0;
         int resultRooms = rooms[0].getPrice();
         for (int i = 1; i < rooms.length; i++) {
-            if (resultRooms > rooms[i].getPrice()) {
+            if (resultRooms >= rooms[i].getPrice()) {
                 resultRooms = rooms[i].getPrice();
+                count++;
             }
-            count++;
         }
 
         Room[] resRoom = new Room[count];

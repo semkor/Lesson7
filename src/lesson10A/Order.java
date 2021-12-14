@@ -1,6 +1,6 @@
 package lesson10A;
 
-import java.util.*;
+import java.util.Date;
 
 public abstract class Order {
     private String itemName;            //имя элемента
@@ -12,7 +12,7 @@ public abstract class Order {
     int basePrice;                      //базовая цена
     public double totalPrice;           //итоговая цена     - не создаем
     private Customer customerOwned;
-    public double price;
+    public double price;                //промежуточное значение - сам создал
 
     public Order(String itemName, Date dateCreated, String shipFromCity, String shipToCity, int basePrice, Customer customerOwned) {
         this.itemName = itemName;

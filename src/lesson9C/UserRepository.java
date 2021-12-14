@@ -1,5 +1,4 @@
-package lesson109D;
-
+package lesson9C;
 
 public class UserRepository {
     private User[] users;
@@ -73,7 +72,7 @@ public class UserRepository {
         return result;
     }
 
-    public String findById(long id) {
+    private String findById(long id) {
         int count = 0;
         String result = null;
         for (int i = 0; i < users.length; i++) {
@@ -97,19 +96,5 @@ public class UserRepository {
             }
         }
         return null;
-    }
-
-    public User updater(User user){
-        if (findById(user.getId()) == null)
-            return null;
-
-        String nowName=findById(user.getId());
-        nowName=user.getName();
-            return user;
-    }
-
-    public void delete(long id){
-        String delete=findById(id);
-        delete=null;
     }
 }

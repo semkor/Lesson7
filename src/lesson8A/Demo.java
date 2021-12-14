@@ -1,4 +1,4 @@
-package lesson108;
+package lesson8A;
 
 public class Demo {
     public static Student createHighestParent(String firstName, String lastName, int group, Course[] coursesTaken) {

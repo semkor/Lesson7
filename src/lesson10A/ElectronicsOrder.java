@@ -4,49 +4,51 @@ import java.util.Date;
 
 public class ElectronicsOrder extends Order {
     private int guaranteeMonths;
-    private int dostavka;
 
-
-    public ElectronicsOrder(String itemName, Date dateCreated, String shipFromCity, String shipToCity, int basePrice, Customer customerOwned, int guaranteeMonths, int dostavka) {
+    public ElectronicsOrder(String itemName, Date dateCreated, String shipFromCity, String shipToCity, int basePrice, Customer customerOwned, int guaranteeMonths) {
         super(itemName, dateCreated, shipFromCity, shipToCity, basePrice, customerOwned);
         this.guaranteeMonths = guaranteeMonths;
-        this.dostavka = dostavka;
     }
 
     @Override
     public void validateOrder() {
-        if (getShipFromCity().equalsIgnoreCase("Киев") || getShipFromCity().equalsIgnoreCase("Одесса")
-                || getShipFromCity().equalsIgnoreCase("Днепр") || getShipFromCity().equalsIgnoreCase("Харьков"))
-            System.out.println("Из города " + getShipFromCity() + " осуществляются заказы");
-        else {
-            System.out.println("Из города " + getShipFromCity() + " не осуществляются заказы");
-            System.out.println("Выберите из следующих городов: Киев, Одесса, Днепр, Харьков");
+        if (logicCity(getShipFromCity())) {
+            System.err.println("Заказы осуществлются, только из городов: Киев, Одесса, Днепр, Харьков  - " + getShipFromCity());
+            return;
         }
-
-        if (getShipToCity().equalsIgnoreCase("Киев") || getShipToCity().equalsIgnoreCase("Одесса")
-                || getShipToCity().equalsIgnoreCase("Днепр") || getShipToCity().equalsIgnoreCase("Харьков"))
-            System.out.println("Доставка в город " + getShipToCity() + " осуществляется");
-        else {
-            System.out.println("Доставка в город " + getShipToCity() + " не осуществлется");
-            System.out.println("Выберите из следующих городов: Киев, Одесса, Днепр, Харьков");
+        if (logicCity(getShipToCity())) {
+            System.err.println("Доставка осуществляется, только в город: Киев, Одесса, Днепр, Харьков  - " + getShipFromCity());
+            return;
         }
     }
 
     @Override
     public void calculatePrice() {
-        if (getTotalPrice() < 100)
-            System.out.println("Минимальная цена заказа 100 грн");
+        price=getBasePrice();
 
-        if (getCustomerOwned().getGender() != "Женский")
-            System.out.println("Пол может быть только женский");
-
-        if (getShipToCity().equalsIgnoreCase("Киев") || getShipToCity().equalsIgnoreCase("Одесса"))
-            price = (getBasePrice() + dostavka) * 0.90;
-        else
-            price = (getBasePrice() + dostavka) * 0.85;
-
-        if (getTotalPrice() > 1000 && dostavka == 0) {
-            price *= 0.95;
+        if (price < 0 || price < 100) {
+            System.err.println("Минимальная цена заказа - 100 грн");
+        return;
         }
+
+        if (!getCustomerOwned().getGender().equalsIgnoreCase("Женский")){
+            System.err.println("Пол может быть только Женский");
+        return;
+        }
+
+        if(getBasePrice()>1000 && getCustomerOwned().isComision())
+                price*=0.95;
+
+        if(getShipToCity().equalsIgnoreCase("Киев") || getShipToCity().equalsIgnoreCase("Одесса"))
+                totalPrice=price+getBasePrice() * 0.15;
+        else
+                totalPrice=price+getBasePrice() * 0.1;
+}
+
+    private boolean logicCity(String str) {
+        if (str == null || (!str.equalsIgnoreCase("Киев") && !str.equalsIgnoreCase("Одесса")
+                && !str.equalsIgnoreCase("Днепр") && !str.equalsIgnoreCase("Харьков")))
+            return true;
+        return false;
     }
 }
