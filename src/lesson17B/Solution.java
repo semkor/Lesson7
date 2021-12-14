@@ -11,7 +11,7 @@ public class Solution {
         String[] str = input.split(" ");
 
         String strMax = str[0];
-        for (int i = 0; i < str.length; i++) {
+        for (int i = 1; i < str.length; i++) {
             if (strMax.length() < str[i].length())
                 strMax=str[i];
         }
@@ -22,7 +22,7 @@ public class Solution {
         String[] str = input.split(" ");
 
         String strMin = str[0];
-        for (int i = 0; i < str.length; i++) {
+        for (int i = 1; i < str.length; i++) {
             if (strMin.length() > str[i].length())
                 strMin=str[i];
         }
