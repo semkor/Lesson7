@@ -1,4 +1,4 @@
-package lesson26;
+package lesson26A;
 
 public class Order {
     private long id;
