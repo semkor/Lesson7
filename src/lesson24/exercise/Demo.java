@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Demo {
     public static void main(String[] args) {
-        GeneralDAO<Sys> systemDAO=new GeneralDAO<>();
         Sys system1=new Sys(11,"....");
+        GeneralDAO<Sys> systemDAO=new GeneralDAO<>();
         systemDAO.save(system1);
         System.out.println(Arrays.deepToString(systemDAO.getAll()));
         systemDAO.save(system1);
