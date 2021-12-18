@@ -1,4 +1,6 @@
-package lesson28;
+package lesson28.Comparator;
+
+import lesson28.Comparable.Capability;
 
 import java.util.*;
 

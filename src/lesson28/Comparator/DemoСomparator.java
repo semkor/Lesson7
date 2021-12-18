@@ -1,4 +1,6 @@
-package lesson28;
+package lesson28.Comparator;
+
+import lesson28.Comparable.Capability;
 
 import java.util.*;
 
@@ -37,7 +39,7 @@ public class DemoСomparator {
 
 //c. сортировка по FullComparator (по полям сhannelName,figerprint,dateCreated (по алфавиту+по убыванию даты)
         System.out.println(capabilities);
-        capabilities.sort(new FullComparator());
+        capabilities.sort(new lesson28.Comparator.Capability.FullComparator());
         for(Capability c:capabilities) {
             System.out.println(c);
         }
