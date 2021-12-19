@@ -1,7 +1,5 @@
 package lesson28.Comparable;
 
-import lesson28.Comparable.Capability;
-
 import java.util.*;
 
 public class DemoСomparable {
@@ -14,5 +12,7 @@ public class DemoСomparable {
         set.add(capability1);
         set.add(capability2);
         set.add(capability3);
+
+        System.out.println(set);
     }
 }

@@ -1,11 +1,8 @@
 package lesson28.Comparator;
 
-import lesson28.Comparable.Capability;
-
 import java.util.*;
 
 public class isActiveComparator implements Comparator<Capability>{
-
 
     @Override
     public int compare(Capability o1, Capability o2) {
