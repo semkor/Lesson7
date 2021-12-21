@@ -7,7 +7,7 @@ public class HashSetTest {
         Order order1 = new Order(12, 345, "text", "dan", "12554");
         Order order2 = new Order(14, 346, "texts", "dans", "12555");
         Order order3 = new Order(15, 347, "textd", "dana", "12559");
-        ;
+
         Order order4 = new Order(16, 348, "textf", "danr", "125589");
         Order order5 = new Order(18, 349, "textg", "danw", "125");
         Order order6 = new Order(18, 349, "textg", "danw", "125");
