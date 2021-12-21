@@ -1,0 +1,21 @@
+package lesson30A;
+
+import java.util.*;
+import lesson30A.ENUM.DepartmentType;
+
+public class DepartmentDAO {
+
+    private static Collection<Department> department() {
+        Set<Department> departmets = new HashSet<>();
+        departmets.add(new Department(DepartmentType.MANAGER, EmployeeDAO.getEmployeeManager()));
+        departmets.add(new Department(DepartmentType.HR, EmployeeDAO.getEmployeeHr()));
+        departmets.add(new Department(DepartmentType.FINANCE, EmployeeDAO.getEmployeeFinance()));
+        departmets.add(new Department(DepartmentType.DEVELOPER, EmployeeDAO.getEmployeeDeveloper()));
+        departmets.add(new Department(DepartmentType.DESIGNER, EmployeeDAO.getEmployeeDesigner()));
+    return departmets;
+    }
+
+    public static Collection<Department> getDepartmentSet () {
+            return department();
+    }
+}
