@@ -5,7 +5,7 @@ import lesson30A.ENUM.DepartmentType;
 
 public class DepartmentDAO {
 
-    private static Collection<Department> department() {
+    private static Set<Department> department() {
         Set<Department> departmets = new HashSet<>();
         departmets.add(new Department(DepartmentType.MANAGER, EmployeeDAO.getEmployeeManager()));
         departmets.add(new Department(DepartmentType.HR, EmployeeDAO.getEmployeeHr()));
@@ -15,7 +15,7 @@ public class DepartmentDAO {
     return departmets;
     }
 
-    public static Collection<Department> getDepartmentSet () {
+    public static Set<Department> getDepartmentSet () {
             return department();
     }
 }

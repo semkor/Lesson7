@@ -21,7 +21,7 @@ public class Order {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Order order = (Order) o;
+        lesson29A.Order order = (lesson29A.Order) o;
         return id == order.id && price == order.price && currency.equals(order.currency) && itemName.equals(order.itemName) && shopIdentificator.equals(order.shopIdentificator);
     }
 

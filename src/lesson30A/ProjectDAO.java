@@ -5,7 +5,7 @@ import java.util.*;
 public class ProjectDAO {
     private static ArrayList<Customer> list = new ArrayList<>(CustomerDAO.getCustomerSet());
 
-    private static Collection<Project> projectAll() {
+    private static Set<Project> projectAll() {
         Set<Project> projectAll = new HashSet<>();
         projectAll.add(new Project("Project11", list.get(0)));
         projectAll.add(new Project("Project12", list.get(0)));
@@ -18,7 +18,7 @@ public class ProjectDAO {
     return projectAll;
     }
 
-    private static Collection<Project> project2() {
+    private static Set<Project> project2() {
         Set<Project> project2 = new HashSet<>();
         project2.add(new Project("Project11", list.get(0)));
         project2.add(new Project("Project21", list.get(1)));
@@ -28,7 +28,7 @@ public class ProjectDAO {
     return project2;
     }
 
-    private static Collection<Project> project3() {
+    private static Set<Project> project3() {
         Set<Project> project3 = new HashSet<>();
         project3.add(new Project("Project12", list.get(0)));
         project3.add(new Project("Project32", list.get(2)));
@@ -36,7 +36,7 @@ public class ProjectDAO {
         return project3;
     }
 
-    private static Collection<Project> project4() {
+    private static Set<Project> project4() {
         Set<Project> project4 = new HashSet<>();
         project4.add(new Project("Project12", list.get(0)));
         project4.add(new Project("Project21", list.get(1)));
@@ -47,19 +47,19 @@ public class ProjectDAO {
         return project4;
     }
 
-    public static Collection<Project> getProjectSet() {
+    public static Set<Project> getProjectSet() {
         return projectAll();
     }
 
-    public static Collection<Project> getProject2Set() {
+    public static Set<Project> getProject2Set() {
         return project2();
     }
 
-    public static Collection<Project> getProject3Set() {
+    public static Set<Project> getProject3Set() {
         return project3();
     }
 
-    public static Collection<Project> getProject4Set() {
+    public static Set<Project> getProject4Set() {
         return project4();
     }
 }

@@ -36,7 +36,7 @@ public class HashSetTest {
         Order order8 = new Order(12, 3454, "texts", "danq", "125554");
         Order order9 = new Order(1, 3463, "textsr", "danse", "162555");
         Order order10 = new Order(2, 3474, "textda", "danar", "125659");
-        ;
+
         Order order11 = new Order(18, 349, "textg", "danw", "125");
         Set<Order> set1 = new HashSet<>();
         set1.add(order8);

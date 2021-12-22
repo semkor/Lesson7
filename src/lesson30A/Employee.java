@@ -22,6 +22,26 @@ public class Employee {
         return projects;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public Date getDateHired() {
+        return dateHired;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

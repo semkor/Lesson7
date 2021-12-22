@@ -5,25 +5,25 @@ import java.util.*;
 
 public class EmployeeDAO {
 
-    private static Collection<Employee> employManager() {
+    private static Set<Employee> employManager() {
         Set<Employee> employManager = new HashSet<>();
         employManager.add(new Employee("Andrey", "Nikiforov", Position.MANAGER,ProjectDAO.getProjectSet()));
     return employManager;
     }
 
-    private static Collection<Employee> employHr() {
+    private static Set<Employee> employHr() {
         Set<Employee> employHr = new HashSet<>();
         employHr.add(new Employee("Inna", "Frolova", Position.HR,ProjectDAO.getProjectSet()));
     return employHr;
     }
 
-    private static Collection<Employee> employFinance() {
+    private static Set<Employee> employFinance() {
         Set<Employee> employFinance = new HashSet<>();
         employFinance.add(new Employee("Katya", "Globa", Position.FINANCE,ProjectDAO.getProjectSet()));
     return employFinance;
     }
 
-    private static Collection<Employee> employDeveloper() {
+    private static Set<Employee> employDeveloper() {
         Set<Employee> employDeveloper = new HashSet<>();
         employDeveloper.add(new Employee("Ivan", "Dorn", Position.TEAM_LEAD,ProjectDAO.getProject2Set()));
         employDeveloper.add(new Employee("Gled", "Sofa", Position.TEAM_LEAD,ProjectDAO.getProject3Set()));
@@ -31,7 +31,7 @@ public class EmployeeDAO {
         employDeveloper.add(new Employee("Kolya", "Gordon", Position.ANALYST,null));
         employDeveloper.add(new Employee("Gled", "Sirov", Position.DEVELOPER,ProjectDAO.getProject3Set()));
         employDeveloper.add(new Employee("Fedor", "Samsonov", Position.DEVELOPER,null));
-        employDeveloper.add(new Employee("Fedor", "Laks", Position.DEVELOPER,ProjectDAO.getProject2Set()));
+        employDeveloper.add(new Employee("Fedor", "Laks", Position.DEVELOPER,ProjectDAO.getProject4Set()));
         employDeveloper.add(new Employee("Kolya", "Rudenkoa", Position.DEVELOPER,null));
         employDeveloper.add(new Employee("Oleg", "Pak", Position.DEVELOPER,ProjectDAO.getProject3Set()));
         employDeveloper.add(new Employee("Foma", "Kim", Position.DEVELOPER,null));
@@ -39,7 +39,7 @@ public class EmployeeDAO {
     return employDeveloper;
     }
 
-    private static Collection<Employee> employDesigner() {
+    private static Set<Employee> employDesigner() {
         Set<Employee> employDesigner = new HashSet<>();
         employDesigner.add(new Employee("Ivan", "lord", Position.LEAD_DESIGNER,ProjectDAO.getProject4Set()));
         employDesigner.add(new Employee("Klaus", "Sofa", Position.LEAD_DESIGNER,ProjectDAO.getProject3Set()));
@@ -50,23 +50,23 @@ public class EmployeeDAO {
     }
 
 
-    public static Collection<Employee> getEmployeeManager() {
+    public static Set<Employee> getEmployeeManager() {
        return employManager();
     }
 
-    public static Collection<Employee> getEmployeeHr() {
+    public static Set<Employee> getEmployeeHr() {
         return employHr();
     }
 
-    public static Collection<Employee> getEmployeeFinance() {
+    public static Set<Employee> getEmployeeFinance() {
         return employFinance();
     }
 
-    public static Collection<Employee> getEmployeeDeveloper() {
+    public static Set<Employee> getEmployeeDeveloper() {
         return employDeveloper();
     }
 
-    public static Collection<Employee> getEmployeeDesigner() {
+    public static Set<Employee> getEmployeeDesigner() {
         return employDesigner();
     }
 }

@@ -4,7 +4,7 @@ import java.util.*;
 
 public class CustomerDAO {
 
-    private static Collection<Customer> customer() {
+    private static Set<Customer> customer() {
         Set<Customer> customers = new LinkedHashSet<>();
         customers.add(new Customer("OOO", "Громнафта", "Ukraine"));
         customers.add(new Customer("OOO", "Украерорух", "Ukraine"));
@@ -14,7 +14,7 @@ public class CustomerDAO {
     return customers;
     }
 
-    public static Collection<Customer>  getCustomerSet() {
+    public static Set<Customer>  getCustomerSet() {
         return customer();
     }
 }
