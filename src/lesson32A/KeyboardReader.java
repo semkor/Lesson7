@@ -41,8 +41,10 @@ public class KeyboardReader {
     private static boolean matcher(String txt) {
         Pattern pattern = Pattern.compile("[\\d\\s\\p{S}\\p{M}\\p{P}]");
         Matcher m = pattern.matcher(txt);
-        if (!m.find())
+        if (!m.find()) {
             return true;
+        }
+            System.out.println("Incorrect name, try again...");
         return false;
     }
 }
