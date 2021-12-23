@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 
 public class KeyboardReader {
     public static void main(String[] args) throws IOException {
-        //readKeyboardScanner();
+        readKeyboardScanner();
         readKeyboardBufferedReader();
     }
 
